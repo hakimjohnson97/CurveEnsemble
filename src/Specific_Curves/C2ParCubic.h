@@ -42,7 +42,6 @@ class C2ParCubic : public Curve
   public:
       C2ParCubic(bool classicalCubic = false);
 
-     // void setCubicClassical(bool yes);
 
       //Optimization
       void S_splineFeasible();
@@ -53,18 +52,9 @@ class C2ParCubic : public Curve
       int S_Curve(double *a, double *b, double *rx, double *ry);
       Curve::Node pointInTheMiddle(double* a, double* b);
 
-      /*int save(fstream &file);
-      int load(fstream &file);
-      int saveAsText(fstream &file);
-      int loadFromText(fstream &file); */
-
-      int getForm(int);
       void boundingRect(double &x, double &y, double &width, double &height);
-      void test() {exit(1);}
 
-      //int firstState, lastState;
       bool *flag_feasible, *flag_optimal, flag_closed, *pieceValid, *respectCorner;
-     // ElasticS::piece* pieces;
 
 };
 

@@ -458,20 +458,7 @@ void Window::pickColor()
      
 }
 
-void Window::loadPaintOptions()
-{ 
 
-}
-
-void Window::savePaintOptions(int curveIndex, int pointIndex)
-{ 
-
-}
-
-void Window::setPaintOptions()
-{
-
-} 
 
 void Window::newProject()
 {

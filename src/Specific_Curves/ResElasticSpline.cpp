@@ -39,19 +39,7 @@ ResElasticSpline::ResElasticSpline()
     //Set Global variables
     tol = 1*pow(10, -13);
 
-
-    int i;
-   // pieces = new piece[MAX_NODES];
-
-
-
     flag_closed = true;
-   // selected = -1;
-}
-
-int ResElasticSpline::getForm(int index)
-{
-   // return pieces[index].form;
 }
 
 
@@ -65,13 +53,11 @@ void ResElasticSpline::S_splineFeasible()
 void ResElasticSpline::S_splineFeasibleSmart()
 {
     S_spline_feasible_stencil(H, count, coarseRes);
-   // qDebug() << "g";
 }
 
 void ResElasticSpline::S_splineFeasibleSmart3(int index)
 {
     S_spline_feasible_stencil3(H, count, coarseRes, index);
-   // qDebug() << "f";
 }
 
 void ResElasticSpline::optimizeCurve(double **nodes, int numNodes, InitDir initDir)
@@ -103,26 +89,6 @@ void ResElasticSpline::fineOptimizeCurve(double** nodes, int numNodes, int depth
      }// for
 }
 
-/*int ResElasticSpline::save(fstream &file)
-{
-
-}
-
-int ResElasticSpline::load(fstream &file)
-{
-
-}
-
-int ResElasticSpline::saveAsText(fstream &file)
-{
-
-}
-
-int ResElasticSpline::loadFromText(fstream &file)
-{
-
-} */
-
 int ResElasticSpline::S_Curve(double *a, double *b, double *rx, double *ry)
 {
 
@@ -130,11 +96,9 @@ int ResElasticSpline::S_Curve(double *a, double *b, double *rx, double *ry)
     penalty8 = 360; //Big number to relieve restriction
 
     piece p;
-  //  if (pieceValid[index] == true)
-  //      return S_curve_lite(pieces[index], rx, ry, 257);
+
     if (make_piece(a, b, &p) == 0)     {
-     //   pieces[index] = p;
-       // pieceValid[index] = true;
+
         return S_curve_lite(p, rx, ry, 257);
     }
     else

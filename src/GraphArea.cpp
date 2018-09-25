@@ -315,9 +315,6 @@ void GraphArea::transform()
     update();
 }
 
-void GraphArea::setPivot()
-{
-}
 
 void GraphArea::setReflectLine1()
 {
@@ -643,11 +640,6 @@ void GraphArea::mouseDoubleClickEvent(QMouseEvent* event)
              centerPoint(eventX, eventY);
          }
      }
-}
-
-void GraphArea::contextMenuEvent(QContextMenuEvent* event)
-{
-
 }
 
 

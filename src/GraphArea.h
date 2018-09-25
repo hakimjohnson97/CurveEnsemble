@@ -156,7 +156,7 @@ class GraphArea : public QFrame
       void mouseMoveEvent(QMouseEvent*);
       void mouseReleaseEvent(QMouseEvent*);
       void mouseDoubleClickEvent(QMouseEvent*);
-      void contextMenuEvent(QContextMenuEvent*);
+
       void paintEvent(QPaintEvent*);
       void keyPressEvent(QKeyEvent*);
   signals:
@@ -183,7 +183,7 @@ class GraphArea : public QFrame
       void optimize(Curve::InitDir);
       void fineOptimize();
       void transform();
-      void setPivot();
+
       void setReflectLine1();
       void setReflectLine2();
       void centerClipRect();

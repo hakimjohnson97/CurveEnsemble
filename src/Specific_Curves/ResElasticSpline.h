@@ -51,13 +51,9 @@ class ResElasticSpline : public Curve
       int S_Curve(double *a, double *b, double *rx, double *ry);
       Curve::Node pointInTheMiddle(double* a, double* b);
 
-
-      int getForm(int);
-
       bool *flag_feasible, *flag_optimal, flag_closed, *pieceValid, *respectCorner;
 
       double runCommand(int c1, double c2);
-int hh;
 
 };
 #endif // RESELASTICSPLINE_H

@@ -58,8 +58,6 @@ class GraphUI : public QFrame
       void tabRemoved(int index);
       void scaleChanged(double);
       void findPoint(int, int);
-  protected:
-      void keyPressEvent(QKeyEvent*);
 
   public slots:
       void updateWidgets();

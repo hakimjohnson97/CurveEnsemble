@@ -31,40 +31,14 @@
 using namespace std;
 using namespace LinesS;
 
-/*const int X = 0;
-const int Y = 1;
-const int DIR = 2;
-const int CORNER = 3;
-const int STATE = 4;
-const int OBE = 5;
-
-const int FREE = 7;
-const int REGULAR = 0;
-const int CLAMPED = 1;
-const int FREE_CLAMPED = 3;
-const int CLAMPED_FREE = 5; */
-
-//const double INFINITY = 1e+200;
-
 Lines::Lines()
 {
 
     //Set Global variables
     tol = 1*pow(10, -13);
-//    D8 = 257;
-
-    //int i;
-   // pieces = new piece[MAX_NODES];
-
 
     flag_closed = true;
-   // selected = -1;
 }
-
-/* int Lines::getForm(int index)
-{
-   // return pieces[index].form;
-} */
 
 
 void Lines::S_splineFeasible()
@@ -87,7 +61,7 @@ void Lines::S_splineFeasibleSmart3(int index)
 void Lines::optimizeCurve(double** nodes, int numNodes, InitDir initDir)
 {
     double theta[coarseRes];
-    equi_angular_partition(theta, coarseRes); printf("OptimizeCurve: hello \n");
+    equi_angular_partition(theta, coarseRes); 
     if (initDir == Smart)
         S_spline_feasible_stencil(nodes, numNodes, coarseRes);
     else if (initDir == Random)
@@ -99,7 +73,7 @@ void Lines::fineOptimizeCurve(double **nodes, int numNodes, int depth)
 {
      int i;
      double h = 360/double(coarseRes);
-     int k = 8; printf("fineOptimizeCurve: hello \n");
+     int k = 8; 
      double theta[2*k];
      for (i = 0; i < depth; i++)    {
          h /= 4;
@@ -108,35 +82,14 @@ void Lines::fineOptimizeCurve(double **nodes, int numNodes, int depth)
      }
 }
 
-/*int Lines::save(fstream &file)
-{
-
-}
-
-int Lines::load(fstream &file)
-{
-
-}
-
-int Lines::saveAsText(fstream &file)
-{
-
-}
-
-int Lines::loadFromText(fstream &file)
-{
-
-} */
 
 int Lines::S_Curve(double *a, double *b, double *rx, double *ry)
 {
 
     piece p;
-  //  if (pieceValid[index] == true)
-  //      return S_curve_lite(pieces[index], rx, ry, 257);
+
     if (make_piece(a, b, &p) == 0)     {
-     //   pieces[index] = p;
-      //  pieceValid[index] = true;
+
         return S_curve_lite(p, rx, ry, 257);
     }
     else

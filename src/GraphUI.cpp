@@ -384,9 +384,4 @@ void GraphUI::setPosition(double x, double y)
      updateWidgets();
 }
 
-void GraphUI::keyPressEvent(QKeyEvent* event)
-{
-
-}
-
 

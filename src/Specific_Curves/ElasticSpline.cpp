@@ -31,40 +31,13 @@
 using namespace std;
 using namespace ElasticS;
 
-/*const int X = 0;
-const int Y = 1;
-const int DIR = 2;
-const int CORNER = 3;
-const int STATE = 4;
-const int OBE = 5;
-
-const int FREE = 7;
-const int REGULAR = 0;
-const int CLAMPED = 1;
-const int FREE_CLAMPED = 3;
-const int CLAMPED_FREE = 5; */
-
-//const double INFINITY = 1e+200;
-
 
 ElasticSpline::ElasticSpline()
 {
               
     //Set Global variables
     tol = 1*pow(10, -13);
-//    D8 = 257;
-    
-    int i;
-   // pieces = new piece[MAX_NODES];
-        
-    
     flag_closed = true;
-   // selected = -1;
-}
-
-int ElasticSpline::getForm(int index)
-{
-   // return pieces[index].form;
 }
 
 
@@ -110,26 +83,6 @@ void ElasticSpline::fineOptimizeCurve(double** nodes, int numNodes, int depth)
      }
 }
 
-/*int ElasticSpline::save(fstream &file)
-{
-
-}
-
-int ElasticSpline::load(fstream &file)
-{
-
-}
-
-int ElasticSpline::saveAsText(fstream &file)
-{
-
-}
-
-int ElasticSpline::loadFromText(fstream &file)
-{
-
-} */
-
 int ElasticSpline::S_Curve(double *a, double *b, double *rx, double *ry)
 {
 
@@ -137,11 +90,9 @@ int ElasticSpline::S_Curve(double *a, double *b, double *rx, double *ry)
     penalty8 = 360; //Big number to relieve restriction
 
     piece p;
-  //  if (pieceValid[index] == true) 
-  //      return S_curve_lite(pieces[index], rx, ry, 257);
+
     if (make_piece(a, b, &p) == 0)     {
-     //   pieces[index] = p;
-       // pieceValid[index] = true;
+
         return S_curve_lite(p, rx, ry, 257);
     }
     else
@@ -168,7 +119,6 @@ void ElasticSpline::boundingRect(double &x, double &y, double &width, double &he
         numPieces = count;
     else
         numPieces = count-1;
-   // for (i = 0; i < numPieces; i++)    {
           i = 0;
         pointsOnCurve(i, pointsX, pointsY);
         for (j = 0; j < coarseRes*2+2; j++)    {
@@ -181,5 +131,4 @@ void ElasticSpline::boundingRect(double &x, double &y, double &width, double &he
             if (pointsY[j] > height)
                 height = pointsY[j];
         }
-   // }
 }

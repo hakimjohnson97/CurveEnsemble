@@ -51,18 +51,9 @@ class CondG2Cubic : public Curve
       int S_Curve(double *a, double *b, double *rx, double *ry);
       Curve::Node pointInTheMiddle(double* a, double* b);
 
-      /*int save(fstream &file);
-      int load(fstream &file);
-      int saveAsText(fstream &file);
-      int loadFromText(fstream &file); */
-
-      int getForm(int);
       void boundingRect(double &x, double &y, double &width, double &height);
-      void test() {exit(1);}
 
-      //int firstState, lastState;
       bool *flag_feasible, *flag_optimal, flag_closed, *pieceValid, *respectCorner;
-     // ElasticS::piece* pieces;
 
 };
 

@@ -64,9 +64,7 @@ class Window : public QMainWindow
       void centerPoint();
       void setGraphMode(QAction* action);
       void setStatusBarMouseCoords(int, int);
-      void setPaintOptions();
-      void loadPaintOptions();
-      void savePaintOptions(int curveIndex, int pointIndex);
+
       void newProject();
       void saveProject();
       void saveAsProject();

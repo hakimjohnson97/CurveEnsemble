@@ -92,7 +92,6 @@ public:
           bool hasOutClamp();
           bool isCornerRespected();
 
-     // private:
           void setIncState(int state);
           void setOutState(int state);
 
@@ -101,6 +100,9 @@ public:
           double dataBallRadius();
           void toggleTick();
           bool isTicked();
+
+      private:
+
 
           double mX, mY;
           double mDir;
